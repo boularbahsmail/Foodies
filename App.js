@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView, View, StyleSheet, StatusBar, ImageBackground } from "react-native";
 
 // Components
 import Header from "./components/Header";
+import Categories from "./components/Categories";
 
 export default function App() {
+  const [activeCategory, setActiveCategory] = useState("ALL");
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
@@ -15,6 +17,10 @@ export default function App() {
             includeTitleAndDescription={true}
             title={"Food categories"}
             description={"Explore our latest recipes by filtering food types below, Burgers, Mexican tacos, And tens of sushi types from all around Asia"}
+          />
+          <Categories
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
           />
         </View>
       </ImageBackground >

@@ -15,7 +15,7 @@ export default function App() {
         <View className="p-4 h-screen w-screen" >
           <Header
             includeTitleAndDescription={true}
-            title={"Food categories"}
+            title={"Multiple and unlimited choices"}
             description={"Explore our latest recipes by filtering food types below, Burgers, Mexican tacos, And tens of sushi types from all around Asia"}
           />
           <Categories

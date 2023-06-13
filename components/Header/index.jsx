@@ -42,7 +42,7 @@ const Header = ({ includeTitleAndDescription, title, description }) => {
       {includeTitleAndDescription && (
         <View className="mt-8">
           <Text
-            className="text-5xl text-white"
+            className="text-4xl text-white"
             style={{ fontFamily: "Robto-Black" }}
           >
             {title}

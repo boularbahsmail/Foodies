@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { SafeAreaView, View, StyleSheet, StatusBar, ImageBackground } from "react-native";
+
+// Components
+import Header from "./components/Header";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ImageBackground
+        source={require("./assets/background.png")}
+        style={styles.backgroundImage}>
+        <View className="p-4 h-screen w-screen" >
+          <Header
+            includeTitleAndDescription={true}
+            title={"Food categories"}
+            description={"Explore our latest recipes by filtering food types below, Burgers, Mexican tacos, And tens of sushi types from all around Asia"}
+          />
+        </View>
+      </ImageBackground >
+    </SafeAreaView >
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: StatusBar.currentHeight,
+    marginBottom: 0,
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    width: '100%',
+    height: '100%',
   },
 });

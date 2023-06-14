@@ -6,7 +6,7 @@ import { useFonts } from "expo-font";
 import categories from "./data";
 
 // Icons
-import IoniconsIcon from "react-native-vector-icons/Ionicons";
+import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const Categories = ({ activeCategory, setActiveCategory }) => {
   // Roboto google font
@@ -36,19 +36,19 @@ const Categories = ({ activeCategory, setActiveCategory }) => {
         {categories?.map((category) => (
           <TouchableOpacity
             activeOpacity={0.5}
-            className={`h-10 px-5 rounded-full flex flex-row justify-center items-center ${
+            className={`h-10 px-5 rounded-full flex flex-row justify-center items-center border ${
               activeCategory == category?.slug
-                ? "bg-orange-600"
-                : "bg-zinc-600 opacity-70"
+                ? "bg-orange-600 border-orange-600"
+                : "bg-zinc-800 opacity-80 border-zinc-700"
             }`}
             key={category.id}
             onPress={() => {
               setActiveCategory(category?.slug);
             }}
           >
-            {category?.slug == "ALL" && (
-              <IoniconsIcon
-                name="ios-list"
+            {category?.slug == "TOUS" && (
+              <MaterialCommunityIconsIcon
+                name="dots-grid"
                 color={"#FFFFFF"}
                 size={20}
                 style={{ marginRight: 3 }}

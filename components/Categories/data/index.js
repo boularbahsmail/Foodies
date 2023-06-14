@@ -1,8 +1,8 @@
 const categories = [
     {
         id: 1,
-        title: "All",
-        slug: "ALL"
+        title: "Tous",
+        slug: "TOUS"
     },
     {
         id: 2,

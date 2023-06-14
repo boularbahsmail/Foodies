@@ -4,9 +4,10 @@ import { SafeAreaView, View, StyleSheet, StatusBar, ImageBackground } from "reac
 // Components
 import Header from "./components/Header";
 import Categories from "./components/Categories";
+import Foods from "./components/Foods";
 
 export default function App() {
-  const [activeCategory, setActiveCategory] = useState("ALL");
+  const [activeCategory, setActiveCategory] = useState("TOUS");
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
@@ -14,11 +15,17 @@ export default function App() {
         style={styles.backgroundImage}>
         <View className="p-4 h-screen w-screen" >
           <Header
+            includeIcons={false}
             includeTitleAndDescription={true}
-            title={"Multiple and unlimited choices"}
-            description={"Explore our latest recipes by filtering food types below, Burgers, Mexican tacos, And tens of sushi types from all around Asia"}
+            title={"Choix multiples et illimités"}
+            // description={"Explore our latest recipes by filtering food types below, Burgers, Mexican tacos, And tens of sushi types from all around Asia"}
+            description={"Explorez nos dernières recettes en filtrant les types d'aliments ci-dessous."}
           />
           <Categories
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+          />
+          <Foods
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}
           />

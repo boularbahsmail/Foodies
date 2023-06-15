@@ -30,7 +30,7 @@ const Categories = ({ activeCategory, setActiveCategory }) => {
           flexDirection: "row",
           justifyContent: "flex-start",
           alignItems: "center",
-          gap: 10,
+          // gap: 10,
         }}
       >
         {categories?.map((category) => (
@@ -40,7 +40,7 @@ const Categories = ({ activeCategory, setActiveCategory }) => {
               activeCategory == category?.slug
                 ? "bg-orange-600 border-orange-600"
                 : "bg-zinc-800 opacity-80 border-zinc-700"
-            }`}
+            } mr-4`}
             key={category.id}
             onPress={() => {
               setActiveCategory(category?.slug);

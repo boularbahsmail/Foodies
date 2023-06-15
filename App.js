@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { SafeAreaView, View, StyleSheet, StatusBar, ImageBackground } from "react-native";
+import { SafeAreaView, StyleSheet, StatusBar, ImageBackground, ScrollView } from "react-native";
 
 // Components
 import Header from "./components/Header";
 import Categories from "./components/Categories";
 import Foods from "./components/Foods";
+import PremiumRecipes from "./components/PremiumRecipes";
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState("TOUS");
@@ -13,7 +14,8 @@ export default function App() {
       <ImageBackground
         source={require("./assets/background.png")}
         style={styles.backgroundImage}>
-        <View className="p-4 h-screen w-screen" >
+        <ScrollView className="p-4 h-screen w-screen pr-0"
+          showsVerticalScrollIndicator={false}>
           <Header
             includeIcons={false}
             includeTitleAndDescription={true}
@@ -29,7 +31,8 @@ export default function App() {
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}
           />
-        </View>
+          <PremiumRecipes />
+        </ScrollView>
       </ImageBackground >
     </SafeAreaView >
   );

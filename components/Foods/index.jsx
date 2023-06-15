@@ -31,18 +31,18 @@ const Foods = ({ activeCategory }) => {
           flexDirection: "row",
           justifyContent: "flex-start",
           alignItems: "center",
-          gap: 10,
+          // gap: 10,
         }}
       >
         {foods?.map((food) =>
           food?.category == activeCategory ? (
             <TouchableOpacity
-              className="p-4 bg-zinc-800 flex rounded-lg border border-zinc-700 w-72"
+              className="p-4 bg-zinc-800 flex rounded-xl border border-zinc-700 w-72 mr-4"
               activeOpacity={0.7}
               key={food?.id}
             >
               <View className="flex-col justify-center items-center w-100">
-                <View className="w-full flex justify-center items-center overflow-hidden rounded-lg mb-3">
+                <View className="w-full flex justify-center items-center overflow-hidden rounded-xl mb-3">
                   <Image
                     source={{ uri: food?.image }}
                     style={{ width: "100%", height: 240 }}
@@ -81,12 +81,12 @@ const Foods = ({ activeCategory }) => {
             </TouchableOpacity>
           ) : activeCategory == "TOUS" ? (
             <TouchableOpacity
-              className="p-4 bg-zinc-800 flex rounded-lg border border-zinc-700 w-72"
+              className="p-4 bg-zinc-800 flex rounded-xl border border-zinc-700 w-72 mr-4"
               activeOpacity={0.7}
               key={food?.id}
             >
               <View className="flex-col justify-center items-center w-100">
-                <View className="w-full flex justify-center items-center overflow-hidden rounded-lg mb-3">
+                <View className="w-full flex justify-center items-center overflow-hidden rounded-xl mb-3">
                   <Image
                     source={{ uri: food?.image }}
                     style={{ width: "100%", height: 240 }}

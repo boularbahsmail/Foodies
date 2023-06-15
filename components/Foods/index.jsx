@@ -21,7 +21,7 @@ const Foods = ({ activeCategory }) => {
   }
 
   return (
-    <View className="mt-6">
+    <View className="mt-6 pl-4">
       <ScrollView
         className="w-100"
         horizontal={true}

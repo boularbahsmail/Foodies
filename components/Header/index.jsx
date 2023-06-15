@@ -24,9 +24,9 @@ const Header = ({
   }
 
   return (
-    <View>
+    <View className="px-4 mt-2">
       {includeIcons && (
-        <View className="flex flex-row justify-between items-center w-full pt-2 mb-2 pr-4">
+        <View className="flex flex-row justify-between items-center w-full pt-2 mb-2">
           <TouchableOpacity
             activeOpacity={0.7}
             className="border border-zinc-700 rounded-full w-12 h-12 flex justify-center items-center"

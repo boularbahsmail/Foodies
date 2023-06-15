@@ -1,39 +1,29 @@
-import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, StatusBar, ImageBackground, ScrollView } from "react-native";
+import React from "react";
+import { SafeAreaView, StyleSheet, StatusBar } from "react-native";
 
-// Components
-import Header from "./components/Header";
-import Categories from "./components/Categories";
-import Foods from "./components/Foods";
-import PremiumRecipes from "./components/PremiumRecipes";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+const Stack = createNativeStackNavigator();
+
+// Routes
+import Home from "./routes/Home";
+import PremiumFoodsList from "./routes/PremiumFoodsList";
 
 export default function App() {
-  const [activeCategory, setActiveCategory] = useState("TOUS");
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground
-        source={require("./assets/background.png")}
-        style={styles.backgroundImage}>
-        <ScrollView className="p-4 h-screen w-screen pr-0"
-          showsVerticalScrollIndicator={false}>
-          <Header
-            includeIcons={false}
-            includeTitleAndDescription={true}
-            title={"Choix multiples et illimités"}
-            // description={"Explore our latest recipes by filtering food types below, Burgers, Mexican tacos, And tens of sushi types from all around Asia"}
-            description={"Explorez nos dernières recettes en filtrant les types d'aliments ci-dessous."}
-          />
-          <Categories
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
-          />
-          <Foods
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
-          />
-          <PremiumRecipes />
-        </ScrollView>
-      </ImageBackground >
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+            animationTypeForReplace: "push",
+            animation: "fade_from_bottom",
+          }}
+        >
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="PremiumFoods" component={PremiumFoodsList} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </SafeAreaView >
   );
 }

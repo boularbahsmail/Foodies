@@ -20,7 +20,7 @@ const Categories = ({ activeCategory, setActiveCategory }) => {
   }
 
   return (
-    <View className="mt-6 pl-4">
+    <View className="mt-6">
       <ScrollView
         className="w-full"
         horizontal={true}

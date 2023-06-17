@@ -24,7 +24,7 @@ const Header = ({
   }
 
   return (
-    <View className="px-4 mt-2">
+    <View className="pr-4">
       {includeIcons && (
         <View className="flex flex-row justify-between items-center w-full pt-2 mb-2">
           <TouchableOpacity
